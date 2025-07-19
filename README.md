@@ -40,8 +40,8 @@ kubectl get <object_type>
 kubectl delete -f <config-file>
 # Updating the image of a container in a deployment.
 kubectl set image <object_type>/<object_name>  <container_name> = <new_image>
-# Creating a secre
-kubectl create secret generic <secret_name> --from-literal(from command) <key>=<value>
+# Creating a secret
+kubectl create secret generic <secret_name> --from-literal <key=value>
 # Executing into a container
 kubectl exec -it <container> sh
 ```
@@ -86,3 +86,20 @@ sudo chmod u+s /usr/local/bin/docker-machine-driver-hyperkit
 # Confirm it's installed
 which docker-machine-driver-hyperkit
 ```
+
+
+## Google Kubernetes Engine Setup
+**Steps:**
+* Enable Kubernetes Engine <a href='https://console.cloud.google.com/marketplace/product/google/container.googleapis.com?q=search&referrer=search&inv=1&invt=Ab3KvA&project=concise-quarter-466411-d9&pli=1'>API</a>
+* Create Kubernetes <a href='https://console.cloud.google.com/kubernetes/list/overview?inv=1&invt=Ab3KvA&project=concise-quarter-466411-d9'>cluster</a>
+* Authenticate the google cloud shell using the below commands:
+    ```bash
+    # set project
+    gcloud config set project <project-id>
+    # set compute zone
+    gcloud config set compute/zone <zone>
+    # get cluster credentials
+    gcloud container clusters get-credentials <kubernetes cluster name>
+    # Run Kubectl commands to test access to the cluster
+    kubectl create secret generic pgpassword --from-literal <key=value>
+    ```
