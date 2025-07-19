@@ -5,7 +5,7 @@ on:
     outputs:
       IMAGE_TAG:
         description: 'The tag of the built image'
-        value: ${{ steps.set-output.outputs.image_tag }}
+        value: ${{ jobs.build.outputs.image_tag }}
 
 env:
   COMMIT_TAG: ${{ github.sha }}
@@ -14,6 +14,8 @@ jobs:
   build-server:
     name: Build Server Image
     runs-on: ubuntu-latest
+    outputs:
+      image_tag: ${{ steps.set-output.outputs.image_tag }}
     environment: dev
     steps:
       - name: Checkout code
