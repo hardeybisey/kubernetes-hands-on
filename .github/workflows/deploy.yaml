@@ -29,9 +29,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build-client, build-server, build-worker]
     env:
-      SERVER_IMAGE_TAG : ${{ needs.build-server.outputs.IMAGE_TAG }}
-      CLIENT_IMAGE_TAG : ${{ needs.build-client.outputs.IMAGE_TAG }}
-      WORKER_IMAGE_TAG : ${{ needs.build-worker.outputs.IMAGE_TAG }}
+      SERVER_IMAGE_TAG : ${{ needs.build-server.outputs.COMMIT_TAG }}
+      CLIENT_IMAGE_TAG : ${{ needs.build-client.outputs.COMMIT_TAG }}
+      WORKER_IMAGE_TAG : ${{ needs.build-worker.outputs.COMMIT_TAG }}
 
     steps:
       - name: Checkout code
