@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: client
-        image: iadebisi/multi-client
+        image: iadebisi/multi-client:latest
         ports:
           - containerPort: 3000
         resources:
