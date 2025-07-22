@@ -97,7 +97,7 @@ which docker-machine-driver-hyperkit
     # set project
     gcloud config set project <project-id|concise-quarter-466411-d9>
     # set compute zone
-    gcloud config set compute/zone <zone|europe-west4-b>
+    gcloud config set compute/zone <zone|europe-west4-a>
     # get cluster credentials
     gcloud container clusters get-credentials <kubernetes cluster name|multi-cluster>
     # Run Kubectl commands to test access to the cluster
