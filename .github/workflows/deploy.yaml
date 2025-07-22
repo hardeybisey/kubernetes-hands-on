@@ -69,6 +69,6 @@ jobs:
 
       - name: Wait for Deployment Rollout
         run: |
-          kubectl rollout status deployment/worker --timeout=120s
-          kubectl rollout status deployment/server --timeout=120s
-          kubectl rollout status deployment/client --timeout=120s
+          kubectl rollout status deployment/worker-deployment --timeout=120s
+          kubectl rollout status deployment/server-deployment --timeout=120s
+          kubectl rollout status deployment/client-deployment --timeout=120s
